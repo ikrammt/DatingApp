@@ -1,5 +1,5 @@
 import { View, Text, Pressable, Image } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "@rneui/themed";
 import Modal from "react-native-modal";
 
@@ -13,11 +13,20 @@ export default function User({
   jobType,
 }) {
   const [isModalVisible, setModalVisible] = useState(false);
+  const [loveQuote, setLoveQuote] = useState('');
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
     // console.log(3);
   };
+
+  useEffect(() => {
+    // Fetch a random love quote from the API
+    fetch('https://api.quotable.io/random?tags=love')
+      .then(response => response.json())
+      .then(data => setLoveQuote(data.content))
+      .catch(error => console.error('Error fetching quote:', error));
+  }, []);
 
   return (
     <View>
@@ -117,13 +126,15 @@ export default function User({
           />
 
           {/* TODO: ADD A DYNAMIC QUOTE FROM THE API: https://api.quotable.io/random?tags=love" */}
+          <Text style={{ marginTop: 20 }}>
+            {loveQuote}
+          </Text>
           <Text
             style={{
               flex: 1,
               marginTop: 20,
             }}
           >
-            DYNAMIC QUOTE
           </Text>
 
           <View
