@@ -22,34 +22,17 @@ export default function App() {
    */
   const [isDarkMode, setIsDarkMode] = useState(colorScheme === "dark");
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-  const getBackgroundImage = () => {
-    return isDarkMode ? require('./assets/bg-dark.jpg') : require('./assets/bg-light.jpg');
-  };
 
   return (
-    <ImageBackground
-      source={getBackgroundImage()}
-      style={styles.backgroundImage}
-    >
+
       <NavigationContainer theme={isDarkMode ? styles.DarkTheme : styles.LightTheme}>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="AllProfilesMain">
-            {(props) => <AllProfilesMain {...props} isDarkMode={isDarkMode} />}
-          </Stack.Screen>
-        </Stack.Navigator>
-        <View style={styles.switchContainer}>
-          {/* Add switch button to toggle Dark/Light mode */}
-          <Switch
-            value={isDarkMode}
-            onValueChange={toggleDarkMode}
-            style={styles.switch}
-          />
-        </View>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen
+          name="AllProfilesMain"
+          component={AllProfilesMain}
+        ></Stack.Screen>
+      </Stack.Navigator>
       </NavigationContainer>
-    </ImageBackground>
   );
 }
 // Step 6. Define LightTheme and DarkTheme
@@ -62,27 +45,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white", 
-  },
-  switch: {
-    alignSelf: "flex-end",
-    margin: 10,
-  },
-  LightTheme: {
-    ...DefaultTheme,
-    dark: true,
-    colors: {
-      ...DefaultTheme.colors,
-      text: "black",
-      background: "white",
-    },
-  },
-  DarkTheme: {
-    ...DarkTheme,
-    dark: false,
-    colors: {
-      ...DarkTheme.colors,
-      text: "white",
-      background: "black",
-    },
   },
 });
