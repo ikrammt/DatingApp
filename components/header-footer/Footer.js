@@ -13,9 +13,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         width: 500,
         height: 50,
+        
     },
     footerText: {
         fontSize: 18,
         color: 'black',
+        marginRight:"20%"
       },
 });

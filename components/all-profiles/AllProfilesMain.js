@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 10,
     fontSize: 18,
+    textAlign: "center"
   },
   LightTheme: {
     ...DefaultTheme,

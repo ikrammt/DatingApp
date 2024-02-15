@@ -1,10 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import ListProfiles from "../all-profiles/ListProfiles";
 import Form from "../Form";
 import ListUsers from "../top-10/ListUsers";
-
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
@@ -27,7 +25,7 @@ export default function TabNavigation() {
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
+        tabBarActiveTintColor: "#0088D6",
         tabBarInactiveTintColor: "gray",
       })}
     >

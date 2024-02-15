@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native-paper";
-import Header from "./header-footer/Header";
-import Footer from "./header-footer/Footer";
 export default function Form() {
     const user = {
         firstName: "",
@@ -17,7 +15,6 @@ export default function Form() {
     // console.log(userInfo);
     return (
         <View style={styles.container}>
-            <Header />
             <View style={styles.textContainer}>
                 <Text style={styles.title}> Update Your Profile Infos</Text>
             </View>
@@ -107,7 +104,6 @@ export default function Form() {
                     />
                 </ScrollView>
             </View>
-            <Footer />
         </View>
     );
 }
