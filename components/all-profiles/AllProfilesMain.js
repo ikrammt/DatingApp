@@ -11,8 +11,8 @@ export default function AllProfilesMain() {
 
   const getBackgroundImage = () => {
     return isDarkMode
-      ? require('/Users/ikrammtimet555gmail.com/MEDTECH/Cources/SE-junior/term2/Mobile/Dating App/LAB2/DatingApp/assets/bg-dark.jpg')
-      : require('/Users/ikrammtimet555gmail.com/MEDTECH/Cources/SE-junior/term2/Mobile/Dating App/LAB2/DatingApp/assets/bg-light.jpg');
+      ? require('../../assets/bg-dark.jpg')
+      : require('../../assets/bg-light.jpg');
   };
 
   return (
